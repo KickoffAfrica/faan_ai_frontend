@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary-500);
+  --color-primary-muted: var(--primary-muted);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Primary color scale (Brand) */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  /* Secondary color scale (Green) */
+  --color-secondary-50: var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+
+  /* Blue scale (neutral gray-blue) */
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+  --color-blue-900: var(--blue-900);
+
+  /* Dark scale */
+  --color-dark-50: var(--dark-50);
+  --color-dark-100: var(--dark-100);
+  --color-dark-200: var(--dark-200);
+  --color-dark-300: var(--dark-300);
+  --color-dark-400: var(--dark-400);
+  --color-dark-500: var(--dark-500);
+  --color-dark-600: var(--dark-600);
+  --color-dark-700: var(--dark-700);
+  --color-dark-800: var(--dark-800);
+  --color-dark-900: var(--dark-900);
+
+  /* Accent colors */
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-orange: var(--orange);
+  --color-orange-light: var(--orange-light);
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #EEF0F1;
+  --foreground: #042851;
+  --foreground-muted: #556475;
+  
+  --card: #FFFFFF;
+  --card-foreground: #042851;
+  --popover: #FFFFFF;
+  --popover-foreground: #042851;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E6F4EA;
+  --secondary-foreground: #023E14;
+  --muted: #EEF0F1;
+  --muted-foreground: #556475;
+  --accent: #E6F4EA;
+  --accent-foreground: #042851;
+  --destructive: #EF4444;
+  --border: #CACFD4;
+  --input: #CACFD4;
+  --ring: #778391;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #042851;
+  --sidebar-primary: #0960C1;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6EFF9;
+  --sidebar-accent-foreground: #042851;
+  --sidebar-border: #CACFD4;
+  --sidebar-ring: #778391;
+
+  /* Primary / Brand color scale */
+  --primary-50: #E6EFF9;
+  --primary-100: #B3CEEC;
+  --primary-200: #8EB6E2;
+  --primary-300: #5A94D5;
+  --primary-400: #3A80CD;
+  --primary-500: #0960C1;
+  --primary-600: #0857B0;
+  --primary-700: #064489;
+  --primary-800: #05356A;
+  --primary-900: #042851;
+  --primary-950: #021327;
+  --primary-muted: #E6EFF9;
+
+  /* Secondary color scale (Green) */
+  --secondary-50: #E6F4EA;
+  --secondary-100: #B1DEBF;
+  --secondary-200: #8CCD9F;
+  --secondary-300: #57B774;
+  --secondary-400: #36A959;
+  --secondary-500: #04932F;
+  --secondary-600: #04862B;
+  --secondary-700: #036821;
+  --secondary-800: #02511A;
+  --secondary-900: #023E14;
+
+  /* Blue (neutral) color scale */
+  --blue-50: #EEF0F1;
+  --blue-100: #CACFD4;
+  --blue-200: #B1B8C0;
+  --blue-300: #8D97A3;
+  --blue-400: #778391;
+  --blue-500: #556475;
+  --blue-600: #4D5B6A;
+  --blue-700: #3C4753;
+  --blue-800: #2F3740;
+  --blue-900: #242A31;
+
+  /* Dark color scale */
+  --dark-50: #313336;
+  --dark-100: #2E3034;
+  --dark-200: #2C2E32;
+  --dark-300: #272A2D;
+  --dark-400: #24272A;
+  --dark-500: #1F2226;
+  --dark-600: #1C1F23;
+  --dark-700: #1A1D21;
+  --dark-800: #16181C;
+  --dark-900: #090C10;
+
+  /* Accent colors for UI elements */
+  --teal: #04932F;
+  --teal-light: #E6F4EA;
+  --orange: #F97316;
+  --orange-light: #FFEDD5;
+  --purple: #8B5CF6;
+  --purple-light: #EDE9FE;
+}
+
+.dark {
+  --background: #090C10;
+  --foreground: #EEF0F1;
+  --card: #1A1D21;
+  --card-foreground: #EEF0F1;
+  --popover: #1A1D21;
+  --popover-foreground: #EEF0F1;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1A1D21;
+  --secondary-foreground: #B1DEBF;
+  --muted: #1F2226;
+  --muted-foreground: #8D97A3;
+  --accent: #1F2226;
+  --accent-foreground: #EEF0F1;
+  --destructive: #EF4444;
+  --border: #2F3740;
+  --input: #2F3740;
+  --ring: #556475;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #1A1D21;
+  --sidebar-foreground: #EEF0F1;
+  --sidebar-primary: #3A80CD;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1F2226;
+  --sidebar-accent-foreground: #EEF0F1;
+  --sidebar-border: #2F3740;
+  --sidebar-ring: #556475;
+
+  /* Primary / Brand color scale (same values, for dark mode text visibility) */
+  --primary-50: #E6EFF9;
+  --primary-100: #B3CEEC;
+  --primary-200: #8EB6E2;
+  --primary-300: #5A94D5;
+  --primary-400: #3A80CD;
+  --primary-500: #3A80CD;
+  --primary-600: #5A94D5;
+  --primary-700: #8EB6E2;
+  --primary-800: #B3CEEC;
+  --primary-900: #E6EFF9;
+  --primary-950: #E6EFF9;
+  --primary-muted: #0960C11A;
+
+  /* Secondary color scale (Green - adjusted for dark) */
+  --secondary-50: #023E14;
+  --secondary-100: #02511A;
+  --secondary-200: #036821;
+  --secondary-300: #04862B;
+  --secondary-400: #04932F;
+  --secondary-500: #36A959;
+  --secondary-600: #57B774;
+  --secondary-700: #8CCD9F;
+  --secondary-800: #B1DEBF;
+  --secondary-900: #E6F4EA;
+
+  /* Blue (neutral) color scale - inverted for dark */
+  --blue-50: #242A31;
+  --blue-100: #2F3740;
+  --blue-200: #B1B8C0;
+  --blue-300: #4D5B6A;
+  --blue-400: #556475;
+  --blue-500: #778391;
+  --blue-600: #8D97A3;
+  --blue-700: #B1B8C0;
+  --blue-800: #CACFD4;
+  --blue-900: #EEF0F1;
+
+  /* Dark color scale - inverted for dark mode */
+  --dark-50: #EEF0F1;
+  --dark-100: #CACFD4;
+  --dark-200: #B1B8C0;
+  --dark-300: #8D97A3;
+  --dark-400: #778391;
+  --dark-500: #556475;
+  --dark-600: #4D5B6A;
+  --dark-700: #3C4753;
+  --dark-800: #16181C;
+  --dark-900: #242A31;
+
+  /* Accent colors for UI elements (adjusted for dark) */
+  --teal: #36A959;
+  --teal-light: #023E14;
+  --orange: #F97316;
+  --orange-light: #7C2D12;
+  --purple: #A78BFA;
+  --purple-light: #4C1D95;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-muted/10;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
