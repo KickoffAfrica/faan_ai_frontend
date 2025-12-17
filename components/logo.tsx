@@ -12,7 +12,7 @@ function Logo() {
         <Image src="/Faan.logo_ 1.svg" alt="Logo" width={isMobile ? 50 : 80} height={isMobile ? 50 : 80} />
         {/* </div> */}
         <div className='flex flex-col'>
-            <h1 className='dark:text-white text-primary-950 md:text-2xl text-sm font-bold'>PexHub Assistant</h1>
+            <h1 className='dark:text-white text-primary-950 md:text-2xl text-sm font-bold'>PExHub Assistant</h1>
             <p className='text-blue-500 dark:text-[#EEF0F1] md:text-sm text-[8px] uppercase'>Always Online</p>
         </div>
     </div>
