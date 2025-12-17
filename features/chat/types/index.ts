@@ -38,7 +38,7 @@ export interface ConversationHistory {
 export interface FaanChatRequest {
   message: string;
   conversationId?: string;
-  airport: string;
+  airport?: string;
 }
 
 export interface FaanChatResponse {

@@ -31,7 +31,7 @@ export async function sendChatMessage(
     const payload: FaanChatRequest = {
       message,
       conversationId,
-      airport: "Lagos",
+      // airport: "Lagos",
     };
 
     const response = await api.post<FaanChatResponse>("/api/chat", payload);

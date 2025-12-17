@@ -151,7 +151,11 @@ export function ChatInput({
           onClick={handleSend}
           disabled={disabled || (!message.trim() && !selectedImage)}
           size="default"
-          className="shrink-0 md:shrink-0 h-[45px] md:h-[50px] w-[45px] md:w-[50px] rounded-full bg-[#8D97A3] hover:bg-[#6D7681]"
+          className={`shrink-0 md:shrink-0 h-[45px] md:h-[50px] w-[45px] md:w-[50px] rounded-full ${
+            message.trim() || selectedImage
+              ? "bg-primary hover:bg-primary/90"
+              : "bg-[#8D97A3] hover:bg-[#6D7681]"
+          }`}
           aria-label="Send message"
         >
           <Send className="h-10 w-10 text-white" />
